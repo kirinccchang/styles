@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ============================================================
-  Bluebook Law Review — Kirin Chang Edition
+  Bluebook Law Review &#8212; Kirin Chang Edition
   Based on: bluebook-law-review.xml (D'Arcus & Sims, 2025-08-22)
   Enhanced with: bluebook-law-review-Choi.xml (Jon Choi, 2019)
   Compliant with: The Bluebook: A Uniform System of Citation (22nd ed. 2025)
@@ -16,7 +16,7 @@
      → Manual: paste https://perma.cc/XXXX-XXXX directly into Place field.
      → Outputs: URL (last visited DATE) [PERMA_URL]
   5. Rule 15.1 / 22nd ed.: et-al-min="4" (up to 3 authors listed in full;
-     only 4+ authors collapse to et al.) — already correct in Base, kept.
+     only 4+ authors collapse to et al.) &#8212; already correct in Base, kept.
   6. Legislation type: full support (§ sections, no-supra short form)
   7. Legal case subsequent: short form citation, NOT supra (Rule 10)
   8. status variable: "forthcoming YEAR" output (Rule 17)
@@ -31,16 +31,14 @@
   - locator types: "page" → "at X"; "paragraph" → "¶ X"; "note" → "n.X"
   ============================================================
 -->
-<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0"
-  demote-non-dropping-particle="sort-only" default-locale="en-US">
-
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-US">
   <info>
     <title>Bluebook Law Review (perma.cc)</title>
     <title-short>Bluebook LR perma.cc</title-short>
     <id>http://www.zotero.org/styles/bluebook-law-review-perma</id>
     <link href="http://www.zotero.org/styles/bluebook-law-review-perma" rel="self"/>
-    <link href="https://www.legalbluebook.com/" rel="documentation"/>
     <link href="http://www.zotero.org/styles/bluebook-law-review" rel="template"/>
+    <link href="https://www.legalbluebook.com/" rel="documentation"/>
     <author>
       <name>Kirin Chang</name>
       <email>cc6614@nyu.edu</email>
@@ -64,7 +62,6 @@
     <updated>2026-04-09T00:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
-
   <!-- ============================================================ -->
   <!--  LOCALE                                                       -->
   <!-- ============================================================ -->
@@ -76,11 +73,9 @@
       <term name="translator" form="verb-short">trans.</term>
     </terms>
   </locale>
-
   <!-- ============================================================ -->
   <!--  AUTHOR MACROS                                                -->
   <!-- ============================================================ -->
-
   <!-- Full name list for first citation (no small-caps default) -->
   <macro name="name-macro">
     <names variable="author">
@@ -88,7 +83,6 @@
       <label form="short" prefix=" "/>
     </names>
   </macro>
-
   <!-- Short name for supra / subsequent citations -->
   <macro name="author-short">
     <choose>
@@ -114,7 +108,6 @@
       </else>
     </choose>
   </macro>
-
   <!-- name-short-macro: last name only, "and" for final author -->
   <macro name="name-short-macro">
     <names variable="author">
@@ -124,7 +117,6 @@
       </substitute>
     </names>
   </macro>
-
   <!-- author: full name at start of first citation; suppressed for cases/statutes -->
   <macro name="author">
     <choose>
@@ -142,14 +134,12 @@
       </else>
     </choose>
   </macro>
-
   <macro name="editor-translator">
     <names variable="editor translator" delimiter=", ">
       <name and="symbol" delimiter=", "/>
       <label form="short" strip-periods="false" prefix=" "/>
     </names>
   </macro>
-
   <!-- ============================================================ -->
   <!--  ACCESS MACRO                                                 -->
   <!--  Bluebook 22nd ed. Rule 18.2.1(d): archiving now REQUIRED    -->
@@ -208,13 +198,11 @@
       </else-if>
     </choose>
   </macro>
-
   <!-- ============================================================ -->
   <!--  SOURCE MACRO                                                 -->
   <!-- ============================================================ -->
   <macro name="source">
     <choose>
-
       <!-- JOURNAL ARTICLE: Author, Title, VOL JOURNAL FIRST_PAGE, PINCITE (YEAR) -->
       <if type="article-journal" match="any">
         <group delimiter=" ">
@@ -230,7 +218,6 @@
           <text macro="issuance" prefix="(" suffix=")"/>
         </group>
       </if>
-
       <!-- LEGAL CASE: Case Name, VOL REPORTER FIRST_PAGE, PINCITE (COURT YEAR) -->
       <else-if type="legal_case">
         <group delimiter=" ">
@@ -246,7 +233,6 @@
           <text macro="issuance" prefix="(" suffix=")"/>
         </group>
       </else-if>
-
       <!-- LEGISLATION: e.g., Americans with Disabilities Act of 1990,
            Pub. L. No. 101-336, 42 U.S.C. § 12101 -->
       <else-if type="legislation">
@@ -268,7 +254,6 @@
           </group>
         </group>
       </else-if>
-
       <!-- NEWSPAPER / MAGAZINE: Title, PUBLICATION, DATE, at PAGE -->
       <else-if type="article-newspaper article-magazine" match="any">
         <group delimiter=", ">
@@ -284,7 +269,6 @@
           </group>
         </group>
       </else-if>
-
       <!-- GENERIC ARTICLE / THESIS -->
       <else-if type="article thesis" match="any">
         <group delimiter=", ">
@@ -301,7 +285,6 @@
           </if>
         </choose>
       </else-if>
-
       <!-- BOOK CHAPTER / CONFERENCE PAPER -->
       <else-if type="chapter paper-conference" match="any">
         <text variable="title" text-case="title" font-style="italic"/>
@@ -313,14 +296,12 @@
         <text variable="locator" prefix=", "/>
         <text macro="issuance" prefix=" (" suffix=")"/>
       </else-if>
-
       <!-- BOOK / REPORT: TITLE IN SMALL CAPS (ED., YEAR) -->
       <else-if type="book report" match="any">
         <text variable="title" text-case="title" font-variant="small-caps"/>
         <text variable="locator" prefix=" "/>
         <text macro="issuance" prefix=" (" suffix=")"/>
       </else-if>
-
       <!-- FALLBACK -->
       <else>
         <group delimiter=", ">
@@ -334,10 +315,8 @@
           </group>
         </group>
       </else>
-
     </choose>
   </macro>
-
   <!-- ============================================================ -->
   <!--  ISSUANCE MACRO                                               -->
   <!--  Handles: status (forthcoming), dates by type, court+year    -->
@@ -406,7 +385,6 @@
       </else>
     </choose>
   </macro>
-
   <!-- ============================================================ -->
   <!--  AT_PAGE MACRO (Choi-enhanced)                               -->
   <!--  Handles three Bluebook locator types:                       -->
@@ -446,7 +424,6 @@
       </if>
     </choose>
   </macro>
-
   <!-- ============================================================ -->
   <!--  CONTAINER MACRO                                              -->
   <!-- ============================================================ -->
@@ -474,7 +451,6 @@
       </else>
     </choose>
   </macro>
-
   <!-- ============================================================ -->
   <!--  CITATION LAYOUT                                              -->
   <!--  et-al-min="4": up to 3 authors listed in full               -->
@@ -483,7 +459,6 @@
   <citation et-al-min="4" et-al-use-first="1">
     <layout suffix="." delimiter="; ">
       <choose>
-
         <!-- ibid WITH locator: "Id. at 45" / "Id. ¶ 12" / "Id. n.5" -->
         <if position="ibid-with-locator">
           <group delimiter=" ">
@@ -491,16 +466,13 @@
             <text macro="at_page"/>
           </group>
         </if>
-
         <!-- ibid WITHOUT locator: "Id." -->
         <else-if position="ibid">
           <text term="ibid" text-case="capitalize-first" font-style="italic"/>
         </else-if>
-
         <!-- SUBSEQUENT CITATIONS -->
         <else-if position="subsequent">
           <choose>
-
             <!-- Legal case: short form citation (Rule 10), NOT supra
                  e.g., Roe v. Wade, 410 U.S. at 155
                  Fill "Title Short" in Zotero for custom short form -->
@@ -514,7 +486,6 @@
                 </group>
               </group>
             </if>
-
             <!-- Legislation: code citation short form (Rule 12)
                  e.g., 42 U.S.C. § 2000e -->
             <else-if type="legislation">
@@ -527,7 +498,6 @@
                 </group>
               </group>
             </else-if>
-
             <!-- All other types: Author, supra note X, at Y
                  BUG FIX: comma before at_page (was missing in Base version) -->
             <else>
@@ -551,10 +521,8 @@
                 <text macro="at_page"/>
               </group>
             </else>
-
           </choose>
         </else-if>
-
         <!-- FIRST / FULL CITATION -->
         <else>
           <group delimiter=", ">
@@ -570,9 +538,7 @@
             <text macro="access"/>
           </group>
         </else>
-
       </choose>
     </layout>
   </citation>
-
 </style>
